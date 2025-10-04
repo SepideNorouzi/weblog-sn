@@ -17,7 +17,10 @@ import { BrowserRouter } from "react-router-dom";
 
 // 2. Create the link
 const link = new HttpLink({
-  uri: import.meta.env.VITE_APP_GRAPGCMS_URI,
+  uri: import.meta.env.VITE_APP_GRAPHCMS_URI,
+  headers: {
+    Authorization: `Bearer ${import.meta.env.VITE_APP_GRAPHCMS_TOKEN}`,
+  },
 });
 
 // 3. Use the 'link' property in the client constructor

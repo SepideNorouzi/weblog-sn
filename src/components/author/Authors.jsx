@@ -12,7 +12,7 @@ function Authors() {
   if (errors) return <h3>error!</h3>;
 
   console.log(data);
-  const { authors } = data;
+  const authors = data?.authors || [];
   return (
     <Grid
       container

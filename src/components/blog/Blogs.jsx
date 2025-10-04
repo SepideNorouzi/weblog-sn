@@ -7,11 +7,13 @@ import CardEl from "../shared/CardEl";
 import Loader from "../shared/Loader";
 
 function Blogs() {
-  const { loading, data, errors } = useQuery(GET_BLOGS_INFO);
+  const { loading, data, error } = useQuery(GET_BLOGS_INFO);
 
   if (loading) return <Loader />;
 
-  if (errors) return <h4>Error</h4>;
+  if (error) return <h4>Error</h4>;
+
+  const posts = data?.posts || [];
 
   return (
     <Grid container spacing={2}>
